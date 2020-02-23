@@ -29,7 +29,7 @@ yarn-error.log*
 package-lock.json
 git-deploy
 coverage
-node_modules
+node_modules/
 public/psl_static/assets
 public/psl_static/assets_new
 public/loadable-assets.json
