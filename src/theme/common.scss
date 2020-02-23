@@ -1,0 +1,121 @@
+@import './variables.scss';
+.no-wrap {
+  white-space: nowrap;
+}
+.prel {
+  position: relative;
+}
+.img-resp {
+  width: 100%;
+  height: auto;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.list-unstyled {
+  list-style-type: none;
+}
+.float-right{
+  float: right;
+}
+
+.float-left{
+  float: left;
+}
+
+.block {
+  display: block; 
+}
+
+.ellipsis-two-line {
+  display: -webkit-box;
+  line-clamp: 2;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.ellipsis-three-line {
+  display: -webkit-box;
+  line-clamp: 3;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.pernia-color {
+  color: $pernia-color !important;
+}
+
+.disabled {
+  color: #bbbbbb;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.full-height {
+  height: 100% !important;
+}
+.full-width {
+  width: 100% !important;
+}
+
+.pernia-color-hover:hover {
+  color: $pernia-color !important;
+}
+.line-through {
+  text-decoration: line-through;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.error-msg {
+  color: red !important;
+  font-size: 12px !important;
+  margin-top: 5px;
+}
+.success-msg {
+  color: green !important;
+  font-size: 12px !important;
+  margin-top: 5px;
+}
+.border-t-grey {
+  border-top: 1px solid $placeholder-bg-color;
+}
+
+.border-l-grey {
+  border-left: 1px solid $placeholder-bg-color;
+}
+.b-b-none {
+  border-bottom: none !important;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <g fill="none" fill-rule="evenodd">
+        <text fill="#999" font-family="Lato-Regular, Lato" font-size="7" transform="translate(-236 -220)">
+            <tspan x="244.177" y="258">Filter</tspan>
+        </text>
+        <g fill-rule="nonzero" stroke="#DBDBDB" stroke-width="1.5" transform="translate(5 8)">
+            <path stroke-linecap="round" d="M0 2.5h22M0 8.5h22M0 14.5h22"/>
+            <circle cx="15" cy="2.5" r="2" fill="#FFF"/>
+            <circle cx="5" cy="8.5" r="2" fill="#FFF"/>
+            <circle cx="17" cy="14.5" r="2" fill="#FFF"/>
+        </g>
+    </g>
+</svg>

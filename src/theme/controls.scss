@@ -1,0 +1,36 @@
+select {
+  height: 32px;
+  border-radius: 0;
+  border: none;
+  background: white;
+  border: 1px solid #ccc;
+  -webkit-appearance: none;
+  padding: 0 8px;
+  outline: none;
+  font-size: 14px;
+  color: #aaa;
+}
+
+input {
+  outline: none;
+  letter-spacing: 0.4px;
+  padding: 0 8px;
+  height: 32px;
+  box-shadow: none;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  &::placeholder {
+    color: #aaa;
+  }
+}
+
+textarea {
+  padding: 8px;
+  letter-spacing: 0.4px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  outline: none;
+  &::placeholder {
+    color: #aaa;
+  }
+}
