@@ -1,1 +1,1 @@
-# Intrello - Intel's Trello
+# Compare Products - Almabase Assignment

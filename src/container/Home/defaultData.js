@@ -7,44 +7,47 @@ let id5= '_' + Math.random().toString(36).substr(2, 9);
 let id6= '_' + Math.random().toString(36).substr(2, 9);
 let id7= '_' + Math.random().toString(36).substr(2, 9);
 
-const list = {
-  heading: 'Backlogs',
-  cardsById: {
-    [id1]: {
-      text: 'when we reopen a topic, (when the successfully reopened dialog box appears), its a success!'
-    }, 
-    [id2]: {
-      text: 'Big Bug when adding participants and refresh the page and close a topic'
-    },
-    [id3]: {
-      text: 'when a user load more topics and select one from them (/conversations/xyz), and then go to closed topics list'
-    }
+export default [
+  {
+    "id": "1",
+    "name": "Cherry",
+    "image": "https://www.perniaspopupshop.com/media/wysiwyg/test/cherries.png",
+    "price": "$1.99",
+    "colors": ["red", "green", "blue"],
+    "condition": "Fresh",
+    "description": "Two Cherries",
+    "vendors": ["Fresh Fruits Market", "Fruit Ninja"]
   },
-  allCardIds: [id1,id2,id3]
-}
-const list2 = {
-  heading: 'Prioritized',
-  cardsById: {
-    [id4]: {
-      text: 'when the successfully reopened dialog box appears, its a success!'
-    }, 
-    [id5]: {
-      text: 'Small Bug when removing participants and refresh the page and close a topic'
-    }
+  {
+    "id": "2",
+    "name": "Orange",
+    "image": "https://www.perniaspopupshop.com/media/wysiwyg/test/orange.png",
+    "price": "$2.99",
+    "colors": ["green", "blue"],
+    "condition": "Frozen",
+    "description": "Giant Orange",
+    "vendors": ["Families Market"]
   },
-  allCardIds: [id4, id5]
-}
-const board = {
-  heading: 'A Mini Trello Project',
-  listsById : {
-    [id6]: list,
-    [id7]: list2
+  {
+    "id": "3",
+    "name": "Nuts",
+    "image": "https://www.perniaspopupshop.com/media/wysiwyg/test/nuts.png",
+    "price": "$1.00",
+    "colors": ["red"],
+    "condition": "Frozen",
+    "description": "Mixed Nuts",
+    "vendors": ["Amazon Distributor"]
   },
-  allListIds: [id6, id7]
-}
-let postData = {
-  id: id8,
-  data: board
-}
+  {
+    "id": "4",
+    "name": "Strawberry",
+    "image": "https://www.perniaspopupshop.com/media/wysiwyg/test/strawberry.png",
+    "price": "$1.49",
+    "colors": ["blue"],
+    "condition": "Fresh",
+    "description": "Just Strawberry",
+    "vendors": ["Big Basket"]
+  }
+]
 
-export default postData;
+  
