@@ -1,12 +1,3 @@
-let id8= '_' + Math.random().toString(36).substr(2, 9);
-let id1= '_' + Math.random().toString(36).substr(2, 9);
-let id2= '_' + Math.random().toString(36).substr(2, 9);
-let id3= '_' + Math.random().toString(36).substr(2, 9);
-let id4= '_' + Math.random().toString(36).substr(2, 9);
-let id5= '_' + Math.random().toString(36).substr(2, 9);
-let id6= '_' + Math.random().toString(36).substr(2, 9);
-let id7= '_' + Math.random().toString(36).substr(2, 9);
-
 export default [
   {
     "id": "1",

@@ -1,0 +1,22 @@
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  .modalWrapper {
+    position: absolute;
+    left: 50%;
+    right: auto;
+    top: 50%;
+    bottom: auto;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
+    width: 450px;
+    transform: translate(-50%, -50%);
+  }
+}

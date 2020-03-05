@@ -1,0 +1,118 @@
+@import '../theme/variables.scss';
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.AttributeModalContainer {
+  padding: 20px;
+}
+.attributeHeading {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dbdbdb;
+  margin-bottom: 10px;
+}
+.CheckboxListSearch {
+  display: flex;
+  margin-bottom: 16px;
+  input {
+    width: 100%;
+    height: 35px;
+    font-size: 12px;
+    color: black;
+    border: 1px solid rgba(117, 117, 117, .26);
+    border-radius: 4px;
+  }
+}
+.checkboxInput {
+  height: unset !important;
+}
+.checkboxAllText {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dbdbdb;
+}
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.PslCheckbox {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  cursor: pointer;
+  user-select: none;
+  .btn-tandc {
+    padding-right: 0;
+    padding-left: 2px;
+    color: inherit;
+  }
+  label {
+    display: flex;
+    text-align: left;
+    padding-left: 17px;
+    cursor: pointer;
+    margin-right: 5px;
+    align-items: center;
+  }
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .PslCheckboxCheckmark {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    border: 1px solid #dbdbdb;
+    border-radius: 2px;
+  }
+  .PslCheckboxCheckmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  .showSelectedCheckbox.PslCheckboxCheckmark {
+    background-color: #2A8FF7;
+    border-color: #2A8FF7;
+  }
+  .ColorPlate {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+  }
+  .showSelectedCheckbox.PslCheckboxCheckmark:after {
+    display: block;
+  }
+  .PslCheckboxCheckmark:after {
+    left: 4px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .PslCheckboxText {
+    text-transform: capitalize;
+  }
+}
+.applyBtn, .cancelBtn {
+  width: 90px;
+  height: 40px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cancelBtn {
+  border: 1px solid #212121;
+}
+.applyBtn {
+  background-color: #2A8FF7;
+  color: #fff;
+}
+.selectAllBox {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dbdbdb;
+  margin: 15px 0;
+}

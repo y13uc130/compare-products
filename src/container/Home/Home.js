@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
 import './styles.scss';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import {
-   } from '../../services/Boards/BoardsActionCreators';
-import {  } from '../../utils/localStorage';
 import DefaultDataJs from './defaultData';
 import classnames from 'classnames';
+import CompareAttributes from '../../components/CompareAttributes';
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      compareProducts: []
+      compareProducts: [],
+      selectedAttributes: ['price', 'colors', 'condition'],
+      openAttributePopup: false
     };
+    this.allAttributes = ['price', 'colors', 'vendors', 'description', 'condition'];
   }
   handleCompareClick = (item) => {
     let itemElm = document.getElementById(item.id);
@@ -66,7 +64,19 @@ class Home extends Component {
       <div className={classnames("itemBox layout align-center justify-center", cond==='Fresh' && 'greenClr', cond==='Frozen' && 'redClr')}>{cond}</div>
     ) 
   }
-
+  renderVendorsDiv = (vendors) => {
+    return (
+      <div className="itemBox layout justify-center align-center column">
+      {
+        vendors.map(vendor=>{
+          return (
+            <div className="m-b-5">{vendor}</div>
+          )
+        })
+      }
+      </div>
+    )
+  }
   renderColorsDiv = (colors) => {
     return (
       <div className="itemBox layout align-center justify-center">
@@ -79,14 +89,26 @@ class Home extends Component {
       </div>
     )
   }
+  handleSelectAttributesClick = () => {
+    this.setState({
+      openAttributePopup: !this.state.openAttributePopup
+    })
+  }
+  handleAttrOptions = (selectedAttributes) => {
+    this.setState({
+      selectedAttributes
+    })
+  }
 
   render () {
-    const { compareProducts } = this.state;
-    let arr=['price', 'colors', 'condition'];
+    const { compareProducts, selectedAttributes, openAttributePopup } = this.state;
     return (
       <div className="compareProductsWrapper" >
         <div className="layout column justify-center align-center" >
-          <h2 className="m-b-15">Compare Products</h2>
+          <div className="m-b-15 m-t-15 layout justify-space-between align-center cp-header">
+            <h2 className="">Compare Products</h2>
+            <div onClick={this.handleSelectAttributesClick} className="h5 cursor-pointer">Add/Remove Attributes</div>
+          </div>
           <div className="ProductsWrapper layout">
             {DefaultDataJs.map((product, index)=>{
                 return (
@@ -116,55 +138,52 @@ class Home extends Component {
                 )
               })}
           </div>
-          {compareProducts && !!compareProducts.length && <div className="comparisonWrapper layout justify-space-between">
-            <div className="compareList prel">
-              <div className="compareOptBox empty"></div>
-              {arr.map((attr, index)=>{
-                return (
-                  <div key={'compareoptBox_'+index} className="compareOptBox layout align-center" >
-                    {attr}
-                  </div>
-                )
-              })}
+          {compareProducts && !!compareProducts.length && (
+            <div className="comparisonWrapper layout justify-space-between">
+              <div className="compareList prel">
+                <div className="compareOptBox empty"></div>
+                {selectedAttributes.map((attr, index)=>{
+                  return (
+                    <div key={'compareoptBox_'+index} className="compareOptBox layout align-center" >
+                      {attr}
+                    </div>
+                  )
+                })}
+              </div>
+              <div className="layout SelectedProducts">
+                {compareProducts && !!compareProducts.length && compareProducts.map((item,i)=>{
+                  return(
+                    <div key={'item_'+i} className="SelectedProductDetails" >
+                      <div className="itemBox itemName layout align-center justify-center ">{item.name}</div>
+                      {selectedAttributes.map((attr, j)=>{
+                        return (
+                          <div className="selectedProductAttrDetails" >
+                            {attr!=='colors' && attr !=='condition' && attr !=='vendors' && <div key={'attr_'+j} className={classnames("itemBox layout align-center justify-center")}>{item[attr]}</div>}
+                            {attr==='colors' && 
+                              this.renderColorsDiv(item[attr])
+                            }
+                            {attr==='condition' && (
+                              this.renderConditionDiv(item[attr])
+                            )}
+                            {attr==='vendors' && (
+                              this.renderVendorsDiv(item[attr])
+                            )}
+                          </div>
+                        )
+                      })}
+                    </div>
+                  )
+                })}
+              </div>
             </div>
-            <div className="layout SelectedProducts">
-              {compareProducts && !!compareProducts.length && compareProducts.map((item,i)=>{
-                return(
-                  <div key={'item_'+i} className="SelectedProductDetails" >
-                    <div className="itemBox itemName layout align-center justify-center ">{item.name}</div>
-                    {arr.map((attr, j)=>{
-                      return (
-                        <div className="selectedProductAttrDetails" >
-                          {attr!=='colors' && attr !=='condition' && <div key={'attr_'+j} className={classnames("itemBox layout align-center justify-center")}>{item[attr]}</div>}
-                          {attr==='colors' && 
-                            this.renderColorsDiv(item[attr])
-                          }
-                          {attr==='condition' && (
-                            this.renderConditionDiv(item[attr])
-                          )}
-                        </div>
-                      )
-                    })}
-                  </div>
-                )
-              })}
-            </div>
-          </div>}
+            )}
         </div>
+        {openAttributePopup && (
+          <CompareAttributes  options={this.allAttributes} selectedOptions={selectedAttributes} handleAttrOptions={this.handleAttrOptions} handleModal={this.handleSelectAttributesClick} />
+        )}
       </div>
     )
   }
 }
-const mapStateToProps = state => {
-  const { boards } = state;
-  return ({
-    boards: boards && boards.boards || {},
-  });
-};
 
-export default compose(
-  withRouter,
-  connect(
-    mapStateToProps,
-  )
-)(Home);
+export default Home;

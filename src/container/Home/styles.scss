@@ -1,3 +1,5 @@
+
+
 .posAbsForSpaceOccupy {
   cursor: pointer;
   position: absolute;
@@ -12,6 +14,9 @@
   background-color: #F6F7F8;
   min-height: 700px;
   width: 100%;
+  .cp-header {
+    width: 860px;
+  }
   .ProductsWrapper {
     margin-bottom: 50px;
     .eachProductWrap {
@@ -23,6 +28,7 @@
       }
       overflow: hidden;
       .productImg {
+        min-height: 250px;
         transform: scale(1.1);
       }
       .posAbsForSpaceOccupy.fixBG {
@@ -64,9 +70,10 @@
     width: 860px;
     overflow-x: auto;
     background-color: #fff;
+    margin-bottom: 30px;
     .compareList {
-      max-width: 660px;
-      flex-basis: 660px;
+      max-width: 671px;
+      flex-basis: 671px;
     }
     .compareOptBox.empty {
       background-color: #fff;
@@ -104,7 +111,7 @@
           height: 50px;
           border-bottom: 1px solid #dbdbdb;
           font-size: 13px;
-          width: 200px;
+          width: 189px;
           &:last-child {
             border-bottom: none;
           }
